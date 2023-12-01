@@ -1,0 +1,16 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: weix-center
+  redis:
+    host: 159.27.186.76
+    port: 6399
+    password: glyqpswredis
+    database: 2
+  neo4j:
+    uri: bolt://localhost:7687
+    authentication:
+      username: neo4j
+      password: 123
