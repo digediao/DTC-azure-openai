@@ -29,10 +29,10 @@ import java.util.List;
 public class DTCEntity implements Serializable {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long dtcId;
 
     @Property
-    private String code;
+    private String id;
 
     @Property
     private String data;
@@ -40,7 +40,7 @@ public class DTCEntity implements Serializable {
     @Property
     private String type;
 
-    @JSONField(serialize = false)
+//    @JSONField(serialize = false)
     @Property
     private List<DTCEntity> next;
 

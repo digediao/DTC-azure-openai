@@ -26,7 +26,8 @@ public class DTCController {
 
     @GetMapping("/create")
     public R createDTCNodes(){
-        List<DTCEntity> entities = dtcService.convertJsonToEntities("C:\\Users\\60131\\Downloads\\Autel to 微软AIGC验证资料20231123\\1.json");
+//        List<DTCEntity> entities = dtcService.convertJsonToEntities("C:\\Users\\60131\\Downloads\\Autel to 微软AIGC验证资料20231123\\1.json");
+        List<DTCEntity> entities = dtcService.convertJsonToEntities("C:\\Users\\低格调\\Downloads\\Autel to 微软AIGC验证资料20231123\\预处理数据\\无人工输出答案\\C044A\\cellHandler.do_cellId=184743(Circuit_System Verification).json");
         entities.forEach(System.out::println);
         dtcService.createDTCNodes(entities);
         return R.ok(entities);
@@ -34,7 +35,8 @@ public class DTCController {
 
     @GetMapping("/getSteps")
     public R getSteps(){
-        List<DTCEntity> entities = dtcService.convertJsonToEntities("C:\\Users\\60131\\Downloads\\Autel to 微软AIGC验证资料20231123\\1.json");
+//        List<DTCEntity> entities = dtcService.convertJsonToEntities("C:\\Users\\60131\\Downloads\\Autel to 微软AIGC验证资料20231123\\1.json");
+        List<DTCEntity> entities = dtcService.convertJsonToEntities("C:\\Users\\低格调\\Downloads\\Autel to 微软AIGC验证资料20231123\\预处理数据\\无人工输出答案\\C044A\\cellHandler.do_cellId=184743(Circuit_System Verification).json");
         String result = dtcService.jsonPayload(entities);
         return R.ok(result);
     }

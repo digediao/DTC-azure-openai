@@ -77,17 +77,18 @@ public class DTCService {
      * 根据code输出json格式数据
      */
     public String jsonPayload(List<DTCEntity> entities){
-        List<DTCEntity> list = new ArrayList<>();
+        DTCEntity dtcEntity = null;
         String result = null;
 //        查找相应位置并返回后续所有节点数据
         for (DTCEntity entity : entities) {
-            if(entity.getCode().contains("S003")){
-                list = entity.getNext();
+            if(entity.getId().contains("S003")){
+                dtcEntity = entity;
                 break;
             }
         }
-        if(!list.isEmpty()){
-            result = JSON.toJSONString(list);
+        if(dtcEntity != null){
+//            存在下一级
+            result = JSON.toJSONString(dtcEntity);
         }
         return result;
     }
